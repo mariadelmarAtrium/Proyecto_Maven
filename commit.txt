@@ -1,3 +1,9 @@
+commit 23c0cd211e5b44726a744916d06d502c693927bd
+Author: maria garcia <mariadelmar@aprolivajaen.com>
+Date:   Thu Apr 20 11:56:07 2017 +0200
+
+    Commit2_Fichero.txt
+
 commit 9673bb24b3fb6639189194c67ba5b9d5702b2a4f
 Author: maria garcia <mariadelmar@aprolivajaen.com>
 Date:   Thu Apr 20 11:27:44 2017 +0200
