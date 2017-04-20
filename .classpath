@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/asm-3.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/aspectj-1.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/aspectjweaver-1.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/spring-aop-4.3.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/spring-beans-4.3.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/spring-context-4.3.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/spring-core-4.3.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/spring-expression-4.3.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DIAJ_USER0/Desktop/MASTER J2EE AVANZADO/UNIDAD 1-SPRING 4.3 CORE Y AOP/libs/lib/spring-test-4.3.6.RELEASE.jar"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

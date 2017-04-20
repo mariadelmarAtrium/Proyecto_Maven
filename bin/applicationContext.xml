@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- Primer bean: Clase Autor- inyeccion por propiedades-->
+	<bean id="autor1" class="com.grupoatrium.modelo.Autor">
+
+		<property name="nombre" value="Craig Walls"/>
+		<property name="nacionalidad" value="Inglaterra"/>
+		<property name="comentarios" value="El autor es un ingeniero de la empresa Pivolta"/>
+	</bean>	
+
+	<!-- Segundo bean: Clase Autor- inyeccion por constructor-->
+	<!--como hay varios argumentos de tipo string, usamos el atributo name para resolver la ambiguedad-->
+	<bean id="autor2" class="com.grupoatrium.modelo.Autor">
+		<constructor-arg name="nombre" value="Eugenia Perez Martinez" />
+		<constructor-arg name="nacionalidad" value="España" />
+		<constructor-arg name="comentarios" value="La autora esta dedicada al tratamiento de las bd" />
+	</bean>	
+
+	<!-- Primer bean: Clase Editorial -->
+	<bean id="editorial" class="com.grupoatrium.modelo.Editorial">
+		<property name="nombre" value="Rama" />
+		<property name="direccion" ref="direccion" />
+		<property name="nif" value="26033795A"/>
+	</bean>
+	
+	<!-- Primer bean: Clase Direccion -->
+	<bean id="direccion" class="com.grupoatrium.modelo.Direccion">
+		<property name="provincia" value="Jaen" />
+		<property name="numero" value="16"/>
+		<property name="cp" value="23002"/>
+		<property name="calle" value="c/Egido de la alcantarilla nº 16 4c" />
+		<property name="poblacion" value="Jaen" />
+	</bean>
+		
+	<!-- primer bean: Clase Libro -->
+	<bean id="libro1" class="com.grupoatrium.modelo.Libro">
+	
+		<property name="titulo" value="Spring"/>
+		<property name="isbn" value="978-84-415-3682-1"/>
+		<property name="publicacion" value="4"/>
+		<property name="precio" value="45.0"/>
+		<property name="descripcion" value="Spring es un framework...."/>
+		<property name="editorial" ref="editorial"/>
+		
+		<!-- Creamos una propiedad de tipo lista  -->
+		<property name="autores">
+		
+			<list value-type="com.grupoatrium.modelo.Autor">
+				
+				<ref bean="autor1"/>
+				<ref bean="autor2"/>
+ 				<!-- Bean interno -->				
+				<bean id="autor3" class="com.grupoatrium.modelo.Autor">
+					<property name="nombre" value="Laura Ayuso Castrillo"/>
+					<property name="nacionalidad" value="Española"/>
+					<property name="comentarios" value="Traductora del libro"/>
+				</bean>
+			</list>
+		</property>
+	</bean>
+			
+	
+	
+	<!-- Cargamos el archivo de propiedades ubicado en la carpeta config -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:config/data-source.properties</value>
+			</list>
+		</property>
+
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+	</bean>
+	
+	<!-- Inyectamos las propiedades del bean con los datos del archivo de propiedades -->
+	<bean id="connectionMgr" class="com.grupoatrium.persistencia.impl.ConnectionMgr">
+		<property name="driver" value="${driver}" />
+		<property name="url" value="${url}" />
+		<property name="usuario" value="${usuario}" />
+		<property name="password" value="${pw}" />
+	</bean>
+
+	
+	<!-- Bean abstracto sin clase asociada que contiene la propiedad connMgr
+	y referencia al bean id="connMgr" -->
+	<bean id="abstractDAO"  abstract="true">
+		<property name="connMgr" ref="connectionMgr"/>
+	</bean>
+	
+		
+	<!-- Creamos dos been que heredan del bean abstracto -->
+	
+	<bean id="librosDAO" class="com.grupoatrium.persistencia.impl.LibrosDAO" parent="abstractDAO"/>			
+	
+	<bean id="editorialesDAO" class="com.grupoatrium.persistencia.impl.EditorialesDAO" parent="abstractDAO"/>
+	
+	
+</beans>
+	
+	
